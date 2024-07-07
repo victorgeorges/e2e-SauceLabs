@@ -3,12 +3,15 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "cypress:open": "cypress open --config-file cypress.config.js",
+    "cypress:run": "cypress run --config-file cypress.config.js",
     "lint": "npx standard",
     "lint:fix": "npx standard --fix",
     "test": "cypress run||true",
     "cy:open": "cypress open",
     "cleanup": "rm -fr cypress/results/*.xml",
     "merge-reports": "jrm combined.xml \"cypress/results/test-results-*.xml\""    
+    
   },
   "keywords": [],
   "author": "",
