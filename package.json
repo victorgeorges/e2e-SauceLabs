@@ -5,13 +5,15 @@
   "scripts": {
     "cypress:open": "cypress open --config-file cypress.config.js",
     "cypress:run": "cypress run --config-file cypress.config.js",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "cypress run||true",
+    "eject": "react-scripts eject",
     "lint": "npx standard",
     "lint:fix": "npx standard --fix",
-    "test": "cypress run||true",
     "cy:open": "cypress open",
     "cleanup": "rm -fr cypress/results/*.xml",
-    "merge-reports": "jrm combined.xml \"cypress/results/test-results-*.xml\""    
-    
+    "merge-reports": "jrm combined.xml \"cypress/results/test-results-*.xml\""
   },
   "keywords": [],
   "author": "",
@@ -21,6 +23,7 @@
     "cypress": "^13.13.0"
   },
   "dependencies": {
-    "appium": "^2.11.1"
+    "appium": "^2.11.1",
+    "react-scripts": "^3.0.1"
   }
 }
