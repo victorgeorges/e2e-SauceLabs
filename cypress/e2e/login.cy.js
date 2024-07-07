@@ -8,10 +8,9 @@ describe ('Login' , ()=>{
         cy.get('[data-test="username"]').should('be.visible').type('standard_user')
         cy.get('[data-test="password"]').should('be.visible').type('secret_sauce')
         cy.get('[data-test="login-button"]').should('be.visible').click()
-        //Assert
         cy.url().should('eq','https://www.saucedemo.com/inventory.html')
         //${visitSite()} -didn't done
-        //
+        
     })
     it('Without username', () => {
         cy.visitSite()
