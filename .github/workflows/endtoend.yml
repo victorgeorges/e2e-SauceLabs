@@ -1,22 +1,22 @@
 name: End-to-end tests 🧪
 
-on: pull_request
+on: [push]
 
 
 jobs:
-  continuos-integration:
-    runs-on: ubuntu-latest
 
+  cypress-run:
+    runs-on: ubuntu-20.04
     steps:
-    - name: Check out code
-      uses: actions/checkout@v3
-      with:
-        persist-credentials: false
-
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '16'
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          persist-credentials: false
+                 
+      # Install NPM dependencies, cache them correctly
+      # and run all Cypress tests
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
 
     - name: Install dependencies
       run: npm ci
